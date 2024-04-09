@@ -15,13 +15,19 @@ type MultiLineComment struct {
 }
 
 var languages = map[string]Lang{
-	".c":    CLine,
-	".cpp":  CppLine,
-	".go":   GoLine,
-	".java": JavaLine,
-	".php":  PhpLine,
-	".py":   PyLine,
-	".rs":   RsLine,
+	".c":     CLine,
+	".cpp":   CppLine,
+	".cs":    CsLine,
+	".go":    GoLine,
+	".java":  JavaLine,
+	".md":    MdLine,
+	".mod":   ModLine,
+	".php":   PhpLine,
+	".py":    PyLine,
+	".rb":    RbLine,
+	".rs":    RsLine,
+	".sh":    ShLine,
+	".swift": SwiftLine,
 }
 
 func IsSingleLineComment(ext string, line string) (is bool, supported bool) {

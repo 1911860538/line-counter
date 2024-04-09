@@ -7,6 +7,7 @@ import (
 	"os"
 	"path/filepath"
 	"strings"
+	"time"
 
 	"github.com/1911860538/line-counter/lang"
 )
@@ -48,6 +49,7 @@ func statistic() error {
 		return err
 	}
 
+	// todo use goroutine to getLineCount
 	for i := range files {
 		file := &(files[i])
 		total, blank, comment, err := getLineCount(file)
@@ -228,7 +230,12 @@ func visit(path string, f os.FileInfo, err error, filePaths *[]File) error {
 }
 
 func main() {
+	start := time.Now()
+
 	if err := statistic(); err != nil {
 		panic(err)
 	}
+
+	cost := time.Now().Sub(start).Milliseconds()
+	fmt.Println(cost)
 }
