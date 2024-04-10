@@ -1,6 +1,6 @@
 package lang
 
-var KtLine = Lang{
+var DartLine = Lang{
 	SingleLineComments: []string{`//`},
 	MultiLineComments: []MultiLineComment{
 		{
