@@ -59,14 +59,13 @@ func visit(path string, f os.FileInfo, err error, filePaths *[]*File, params Par
 		if fileExt == "" {
 			return nil
 		}
-		fileExt = fileExt[1:]
 
-		if slices.Contains(params.IgnoreTypes, fileExt) {
+		if slices.Contains(params.IgnoreTypes, fileExt[1:]) {
 			return nil
 		}
 
 		if len(params.Types) > 0 {
-			if !slices.Contains(params.Types, fileExt) {
+			if !slices.Contains(params.Types, fileExt[1:]) {
 				return nil
 			}
 		}
