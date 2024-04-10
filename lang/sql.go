@@ -1,7 +1,7 @@
 package lang
 
-var KtLine = Lang{
-	SingleLineComments: []string{`//`},
+var SqlLine = Lang{
+	SingleLineComments: []string{`--`},
 	MultiLineComments: []MultiLineComment{
 		{
 			Start: `/*`,

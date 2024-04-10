@@ -1,6 +1,6 @@
 package lang
 
-var KtLine = Lang{
+var GroovyLine = Lang{
 	SingleLineComments: []string{`//`},
 	MultiLineComments: []MultiLineComment{
 		{
