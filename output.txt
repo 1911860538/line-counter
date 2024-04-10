@@ -1,0 +1,9 @@
+{Extension:.mod Count:1 SizeSum:99 SizeMin:99 SizeMax:99 SizeAvg:99 Lines:5 LinesMin:5 LinesMax:5 LinesAvg:5 LinesCode:3 LinesComment:0 LinesBlank:2}
+{Extension:.sum Count:1 SizeSum:153 SizeMin:153 SizeMax:153 SizeAvg:153 Lines:2 LinesMin:2 LinesMax:2 LinesAvg:2 LinesCode:2 LinesComment:0 LinesBlank:0}
+{Extension:.rs Count:1 SizeSum:45 SizeMin:45 SizeMax:45 SizeAvg:45 Lines:8 LinesMin:8 LinesMax:8 LinesAvg:8 LinesCode:2 LinesComment:5 LinesBlank:1}
+{Extension:.txt Count:3 SizeSum:84 SizeMin:0 SizeMax:75 SizeAvg:28 Lines:9 LinesMin:0 LinesMax:6 LinesAvg:3 LinesCode:7 LinesComment:0 LinesBlank:2}
+{Extension:.py Count:1 SizeSum:101 SizeMin:101 SizeMax:101 SizeAvg:101 Lines:15 LinesMin:15 LinesMax:15 LinesAvg:15 LinesCode:7 LinesComment:6 LinesBlank:2}
+{Extension:.sh Count:1 SizeSum:56 SizeMin:56 SizeMax:56 SizeAvg:56 Lines:9 LinesMin:9 LinesMax:9 LinesAvg:9 LinesCode:5 LinesComment:1 LinesBlank:3}
+{Extension:.md Count:1 SizeSum:283 SizeMin:283 SizeMax:283 SizeAvg:283 Lines:2 LinesMin:2 LinesMax:2 LinesAvg:2 LinesCode:1 LinesComment:1 LinesBlank:0}
+{Extension:.go Count:34 SizeSum:16654 SizeMin:14 SizeMax:4945 SizeAvg:489 Lines:876 LinesMin:1 LinesMax:281 LinesAvg:25 LinesCode:687 LinesComment:63 LinesBlank:126}
+10
