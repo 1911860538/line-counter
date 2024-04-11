@@ -96,7 +96,7 @@ func visit(path string, f os.FileInfo, err error, filePaths *[]*File, params Par
 }
 
 func isSubPath(dir string, subPath string, pathSep string) bool {
-	ps := strings.SplitN(dir, subPath, 2)
+	ps := strings.SplitN(subPath, dir, 2)
 	if len(ps) > 1 && strings.HasPrefix(ps[1], pathSep) {
 		return true
 	}
