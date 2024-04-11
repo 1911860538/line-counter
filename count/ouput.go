@@ -49,6 +49,10 @@ func output(params Params, staticSlice []*StatisticRow) {
 }
 
 func sizeDisplay(size int64) string {
+	if size == 0 {
+		return "0"
+	}
+
 	if size < 1024 {
 		return fmt.Sprintf("%d B", size)
 	}
