@@ -2,11 +2,12 @@ package count
 
 import (
 	"fmt"
+	"log"
 
 	"github.com/scylladb/termtables"
 )
 
-func output(staticSlice []*StatisticRow) {
+func output(params Params, staticSlice []*StatisticRow) {
 	t := termtables.CreateTable()
 	t.AddTitle("line-counter")
 	t.AddHeaders(
@@ -24,7 +25,8 @@ func output(staticSlice []*StatisticRow) {
 		"LinesAvg",
 		"LinesCode",
 		"LinesComment",
-		"LinesBlank")
+		"LinesBlank",
+	)
 
 	for _, r := range staticSlice {
 		t.AddRow(
@@ -46,5 +48,6 @@ func output(staticSlice []*StatisticRow) {
 		)
 	}
 
+	log.Printf("The target is `%s`.\n\n", params.Target)
 	fmt.Println(t.Render())
 }
