@@ -14,8 +14,6 @@ func output(params Params, staticSlice []*StatisticRow) {
 		"Extension",
 		"Count",
 		"SizeSum",
-		"Count",
-		"SizeSum",
 		"SizeMin",
 		"SizeMax",
 		"SizeAvg",
@@ -31,8 +29,6 @@ func output(params Params, staticSlice []*StatisticRow) {
 	for _, r := range staticSlice {
 		t.AddRow(
 			r.Extension,
-			r.Count,
-			r.SizeSum,
 			r.Count,
 			r.SizeSum,
 			r.SizeMin,
