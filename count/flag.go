@@ -48,30 +48,28 @@ func parseFlags() (Params, error) {
 			return Params{}, err
 		}
 		params.Target = pwd
+	} else {
+		absPath, err := filepath.Abs(params.Target)
+		if err != nil {
+			return Params{}, err
+		}
+		params.Target = absPath
 	}
 
-	_, err := os.Stat(params.Target)
-	if err != nil {
-		return Params{}, err
-	}
-
-	targetExt := filepath.Ext(params.Target)
-	if targetExt != "" {
-		targetExt = targetExt[1:]
-	}
+	fmt.Println(params.Target)
 
 	for _, idf := range strings.Split(strings.TrimSpace(ignoreDfs), ",") {
 		if idf == "" {
 			continue
 		}
 
-		if idf == params.Target {
-			return Params{}, fmt.Errorf("%s: 'in'(ignore directory or file from statistics) equals to directory or file for statistics", idf)
-		}
-
 		absPath, err := getAbsolutePath(idf)
 		if err != nil {
 			return Params{}, err
+		}
+
+		if isSubPath(absPath, params.Target, string(filepath.Separator)) {
+			return Params{}, fmt.Errorf("%s: The target(%s) directory or file for statistics belongs to 'in'(ignore directory or file from statistics) equals to ", params.Target, idf)
 		}
 
 		if !slices.Contains(params.IgnoreDfs, absPath) {
@@ -85,6 +83,10 @@ func parseFlags() (Params, error) {
 		}
 	}
 
+	targetExt := filepath.Ext(params.Target)
+	if targetExt != "" {
+		targetExt = targetExt[1:]
+	}
 	for _, it := range strings.Split(strings.TrimSpace(ignoreTypes), ",") {
 		if it == "" {
 			continue

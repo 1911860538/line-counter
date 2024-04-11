@@ -16,7 +16,7 @@ func Run() {
 
 	staticSlice := static(files)
 
-	output(staticSlice)
+	output(params, staticSlice)
 }
 
 func handleErr(err error) {
