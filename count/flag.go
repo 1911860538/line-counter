@@ -56,8 +56,6 @@ func parseFlags() (Params, error) {
 		params.Target = absPath
 	}
 
-	fmt.Println(params.Target)
-
 	for _, idf := range strings.Split(strings.TrimSpace(ignoreDfs), ",") {
 		if idf == "" {
 			continue
@@ -69,7 +67,7 @@ func parseFlags() (Params, error) {
 		}
 
 		if isSubPath(absPath, params.Target, string(filepath.Separator)) {
-			return Params{}, fmt.Errorf("%s: The target(%s) directory or file for statistics belongs to 'in'(ignore directory or file from statistics) equals to ", params.Target, idf)
+			return Params{}, fmt.Errorf("the target(%s) directory or file for statistics belongs to 'in'(%s)(ignore directory or file from statistics)", params.Target, absPath)
 		}
 
 		if !slices.Contains(params.IgnoreDfs, absPath) {
