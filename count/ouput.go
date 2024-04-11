@@ -30,10 +30,10 @@ func output(params Params, staticSlice []*StatisticRow) {
 		t.AddRow(
 			r.Extension,
 			r.Count,
-			r.SizeSum,
-			r.SizeMin,
-			r.SizeMax,
-			r.SizeAvg,
+			sizeDisplay(r.SizeSum),
+			sizeDisplay(r.SizeMin),
+			sizeDisplay(r.SizeMax),
+			sizeDisplay(r.SizeAvg),
 			r.Lines,
 			r.LinesMin,
 			r.LinesMax,
@@ -46,4 +46,16 @@ func output(params Params, staticSlice []*StatisticRow) {
 
 	log.Printf("The target is `%s`.\n\n", params.Target)
 	fmt.Println(t.Render())
+}
+
+func sizeDisplay(size int64) string {
+	if size < 1024 {
+		return fmt.Sprintf("%d B", size)
+	}
+
+	if size < 1024*1024 {
+		return fmt.Sprintf("%.2f KB", float64(size)/1024)
+	}
+
+	return fmt.Sprintf("%.2f MB", float64(size)/(1024*1024))
 }
