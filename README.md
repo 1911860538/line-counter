@@ -11,6 +11,7 @@ seeking insights into their codebase.
 ```shell
 go install github.com/1911860538/line-counter@latest
 ```
+
 ### Usage
 ```text
 $ line-counter --help
@@ -27,6 +28,7 @@ Usage of line-counter:
         file types for statistics.
         For example: txt,go,py
 ```
+
 ### Run
 ```text
 $ line-counter -in=vendor -it=exe,mod
@@ -44,3 +46,9 @@ $ line-counter -in=vendor -it=exe,mod
 
 2024/04/12 11:03:47 Done! Successfully calculated statistic in 8 milliseconds.
 ```
+
+### Notice
+&nbsp;&nbsp;&nbsp;&nbsp;
+Files without suffixes and files or directories whose names start with  "." 
+will not be ignored by default,
+unless they are the target files or directories.
