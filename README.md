@@ -50,5 +50,5 @@ $ line-counter -in=vendor -it=exe,mod
 ### Notice
 &nbsp;&nbsp;&nbsp;&nbsp;
 Files without suffixes and files or directories whose names start with  "." 
-will not be ignored by default,
+will be ignored by default,
 unless they are the target files or directories.
